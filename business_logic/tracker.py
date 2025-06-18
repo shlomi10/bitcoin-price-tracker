@@ -1,3 +1,5 @@
+import os
+
 import requests
 import json
 from datetime import datetime, UTC
@@ -24,6 +26,6 @@ class BTCPriceTracker:
             logger.error(f"Failed to fetch BTC price: {e}")
 
     def save_to_file(self):
+        os.makedirs(os.path.dirname(self.output_file), exist_ok=True)
         with open(self.output_file, 'w') as f:
             json.dump(self.data, f, indent=2)
-        logger.info("Saved price data to JSON")

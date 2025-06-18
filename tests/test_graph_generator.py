@@ -1,8 +1,6 @@
 import json
-
 import allure
-
-from utils.graph_generator import generate_graph
+from utils.graph_generator import GraphGenerator
 
 
 @allure.suite("Graph Generation")
@@ -19,5 +17,6 @@ def test_generate_graph(tmp_path):
     with open(json_path, 'w') as f:
         json.dump(sample_data, f)
 
-    generate_graph(str(json_path), str(image_path))
+    generator = GraphGenerator()
+    generator.generate(str(json_path), str(image_path))
     assert image_path.exists()

@@ -1,6 +1,6 @@
 from business_logic.tracker import BTCPriceTracker
-from utils.graph_generator import generate_graph
-from utils.email_sender import send_email
+from utils.graph_generator import GraphGenerator
+from utils.email_sender import EmailSender
 from dotenv import load_dotenv
 import os
 import time
@@ -24,18 +24,21 @@ tracker = BTCPriceTracker(
     output_file=os.getenv("OUTPUT_FILE")
 )
 
-for _ in range(2):
+for _ in range(60):
     tracker.fetch_price()
-    time.sleep(2)
+    time.sleep(60)
 
 tracker.save_to_file()
-generate_graph(os.getenv("OUTPUT_FILE"), "btc_graph.png")
+
+graph_generator = GraphGenerator()
+graph_generator.generate(os.getenv("OUTPUT_FILE"), "btc_graph.png")
 
 with open(os.getenv("OUTPUT_FILE"), 'r') as f:
     prices = [entry['price'] for entry in json.load(f)]
 max_price = max(prices)
 
-send_email(
+email_sender = EmailSender()
+email_sender.send(
     smtp_host=os.getenv("SMTP_HOST"),
     smtp_port=int(os.getenv("SMTP_PORT")),
     sender_email=os.getenv("SENDER_EMAIL"),

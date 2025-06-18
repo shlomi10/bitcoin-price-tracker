@@ -4,3 +4,6 @@ python-dotenv
 pytest
 allure-pytest
 pytest-mock
+fastapi
+uvicorn
+smtplib
