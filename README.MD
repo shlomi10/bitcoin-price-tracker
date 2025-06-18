@@ -122,6 +122,7 @@ bitcoin-price-tracker/
 │   ├── test_graph_generator.py
 │   └── test_email_sender.py
 ├── Dockerfile
+├── Dockerfile.api
 ├── docker-compose.yml
 ├── requirements.txt
 ├── .env.example

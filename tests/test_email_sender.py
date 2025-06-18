@@ -2,7 +2,6 @@ from unittest.mock import patch, MagicMock
 import allure
 from utils.email_sender import EmailSender
 
-
 @allure.suite("Email Sender")
 @allure.feature("EmailSender.send")
 def test_send_email_mocked(tmp_path):
@@ -10,22 +9,17 @@ def test_send_email_mocked(tmp_path):
     attachment_path.write_bytes(b"fake-image-data")
 
     sender = EmailSender()
-    sender.send(
-        smtp_host="smtp.test.com",
-        smtp_port=587,
-        sender_email="sender@test.com",
-        password="password",
-        recipient_email="recipient@test.com",
-        subject="Test Subject",
-        body="Test Body",
-        attachment_path=str(attachment_path)
-    )
 
     with patch("smtplib.SMTP") as mock_smtp:
         smtp_instance = MagicMock()
         mock_smtp.return_value.__enter__.return_value = smtp_instance
 
         sender.send(
+            smtp_host="smtp.test.com",
+            smtp_port=587,
+            sender_email="sender@test.com",
+            password="password",
+            recipient_email="recipient@test.com",
             subject="Test Subject",
             body="Test Body",
             attachment_path=str(attachment_path)
