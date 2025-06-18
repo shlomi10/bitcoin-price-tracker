@@ -36,6 +36,11 @@ jobs:
             -v ${{ github.workspace }}/allure-results:/app/allure-results \
             shlomi10/bitcoin-tracker:latest
 
+      - name: Debug Allure Results Folder
+        run: |
+          echo "Checking allure-results contents..."
+          ls -la ./allure-results || echo "No allure-results found"
+
       - name: Install Java (for Allure CLI)
         uses: actions/setup-java@v3
         with:
