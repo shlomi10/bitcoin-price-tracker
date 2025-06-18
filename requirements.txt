@@ -1,0 +1,6 @@
+matplotlib
+requests
+python-dotenv
+pytest
+allure-pytest
+pytest-mock
