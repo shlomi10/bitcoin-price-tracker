@@ -27,7 +27,11 @@ jobs:
         run: |
           mkdir -p ./output ./allure-results
 
-      - name: Pull Image from Docker Hub and Run with Env
+      - name: Build Docker Image Locally
+        run: |
+          docker build -t bitcoin-tracker:local -f Dockerfile .
+
+      - name: Run Docker Container Locally
         run: |
           docker run --rm \
             -e SMTP_HOST=${{ secrets.SMTP_HOST }} \
@@ -39,7 +43,7 @@ jobs:
             -e OUTPUT_FILE=/app/output/price.json \
             -v ${{ github.workspace }}/output:/app/output \
             -v ${{ github.workspace }}/allure-results:/app/allure-results \
-            shlomi10/bitcoin-tracker:latest
+            bitcoin-tracker:local
 
       - name: Debug Allure Results Folder
         run: |
