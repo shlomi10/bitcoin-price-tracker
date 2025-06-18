@@ -1,1 +1,0 @@
-INFO     BTC_Logger:tracker.py:21 Fetched BTC price: 29481.92
