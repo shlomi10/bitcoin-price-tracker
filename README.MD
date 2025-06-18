@@ -37,7 +37,7 @@ Logs prices every minute, saves them to JSON, generates a graph, and emails the 
 ## 🌍 Live App
 
 The app is deployed and available here:  
-🔗 [https://bitcoin-tracker.runmydocker-app.com/](https://bitcoin-tracker.runmydocker-app.com/)
+🔗 [https://bitcoin-tracker.runmydocker-app.com/docs](https://bitcoin-tracker.runmydocker-app.com/docs)
 
 
 ## 🌐 FastAPI UI
