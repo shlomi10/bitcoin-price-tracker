@@ -23,6 +23,10 @@ jobs:
       - name: Set up Docker
         uses: docker/setup-buildx-action@v3
 
+      - name: Create Local Directories for Mounting
+        run: |
+          mkdir -p ./output ./allure-results
+
       - name: Pull Image from Docker Hub and Run with Env
         run: |
           docker run --rm \
@@ -32,7 +36,8 @@ jobs:
             -e SENDER_PASSWORD=${{ secrets.SENDER_PASSWORD }} \
             -e RECIPIENT_EMAIL=${{ secrets.RECIPIENT_EMAIL }} \
             -e API_URL=${{ secrets.API_URL }} \
-            -e OUTPUT_FILE=${{ secrets.OUTPUT_FILE }} \
+            -e OUTPUT_FILE=/app/output/price.json \
+            -v ${{ github.workspace }}/output:/app/output \
             -v ${{ github.workspace }}/allure-results:/app/allure-results \
             shlomi10/bitcoin-tracker:latest
 
