@@ -1,0 +1,1 @@
+INFO     BTC_Logger:tracker.py:29 Saved price data to JSON
