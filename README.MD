@@ -34,6 +34,12 @@ Logs prices every minute, saves them to JSON, generates a graph, and emails the 
 
 ---
 
+## 🌍 Live App
+
+The app is deployed and available here:  
+🔗 [https://bitcoin-tracker.runmydocker-app.com/](https://bitcoin-tracker.runmydocker-app.com/)
+
+
 ## 🌐 FastAPI UI
 
 A simple UI is available to trigger a Bitcoin price fetch and email send manually.
@@ -114,6 +120,8 @@ bitcoin-price-tracker/
 ├── business_logic/
 │   └── tracker.py
 │   └── logger.py
+├── ui/
+│   ├── main.py
 ├── utils/
 │   ├── graph_generator.py
 │   └── email_sender.py
