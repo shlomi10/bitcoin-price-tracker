@@ -9,12 +9,16 @@ def test_send_email_mocked(tmp_path):
     attachment_path = tmp_path / "dummy.png"
     attachment_path.write_bytes(b"fake-image-data")
 
-    sender = EmailSender(
+    sender = EmailSender()
+    sender.send(
         smtp_host="smtp.test.com",
         smtp_port=587,
         sender_email="sender@test.com",
         password="password",
-        recipient_email="recipient@test.com"
+        recipient_email="recipient@test.com",
+        subject="Test Subject",
+        body="Test Body",
+        attachment_path=str(attachment_path)
     )
 
     with patch("smtplib.SMTP") as mock_smtp:

@@ -13,9 +13,9 @@ def collect_and_email():
         api_url=os.getenv("API_URL"),
         output_file=os.getenv("OUTPUT_FILE")
     )
-    for _ in range(2):
+    for _ in range(60):
         tracker.fetch_price()
-        time.sleep(2)
+        time.sleep(60)
 
     tracker.save_to_file()
     GraphGenerator().generate(os.getenv("OUTPUT_FILE"), "btc_graph.png")
