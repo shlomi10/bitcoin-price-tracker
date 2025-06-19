@@ -133,5 +133,10 @@ bitcoin-price-tracker/
 
 ---
 
+## 📚 Documentation
+
+For full technical breakdown and implementation details, visit the [Project Wiki](https://github.com/shlomi10/bitcoin-price-tracker/wiki)
+
+---
 ## 📧 Maintainer
 **Shlomi** — [Docker Hub](https://hub.docker.com/u/shlomi10) · [GitHub](https://github.com/shlomi10)
