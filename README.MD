@@ -55,7 +55,6 @@ Visit: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 
 ### Endpoint
 - `POST /track-hour` — Collects 60 minutes of data, generates graph, emails max price
-
 ---
 
 ## ✅ Test Coverage
@@ -74,10 +73,12 @@ cp .env.example .env
 # Alternatively, set environment secrets in GitHub Actions for CI
 ```
 
-### 2. Run tests locally
+### 2. Run Tests with Allure
 ```bash
 pytest tests/ --alluredir=allure-results
-allure open allure-results
+
+# view Allure results
+allure serve
 ```
 
 ### 3. Run with Docker Compose
@@ -85,17 +86,10 @@ allure open allure-results
 docker compose up --build
 ```
 
-### 4. Run Tests with Allure
-```bash
-pytest tests/ --alluredir=allure-results
-allure serve allure-results
-```
-
-### 5. Run the main script (CLI, one-hour tracking)
+### 4. Run the main script (CLI, one-hour tracking)
 ```bash
 python main.py  # runs one-hour fetch, graph, email
 ```
-
 ---
 
 ## 🐳 Docker Hub
@@ -112,7 +106,6 @@ docker pull shlomi10/bitcoin-tracker
 - Python 3.13.5+
 - Docker + Docker Compose
 - Allure CLI (for test reports): https://docs.qameta.io/allure/
-
 ---
 
 ## 📂 Project Structure
