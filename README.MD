@@ -42,7 +42,7 @@ The app is deployed and available here:
 
 ## 🌐 FastAPI UI
 
-A simple UI is available to trigger a Bitcoin price fetch and email send manually.
+A simple UI is available to trigger a Bitcoin price fetch and email sends manually.
 
 ### Run the FastAPI app
 ```bash
