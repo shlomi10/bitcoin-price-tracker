@@ -13,7 +13,8 @@
 [![Allure Report](https://img.shields.io/badge/Allure%20Report-Live-purple?style=for-the-badge&logo=github)](https://shlomi10.github.io/bitcoin-price-tracker/)
 [![CI](https://img.shields.io/github/actions/workflow/status/shlomi10/bitcoin-price-tracker/ci.yml?label=CI%20Build&style=for-the-badge&logo=github-actions)](https://github.com/shlomi10/bitcoin-price-tracker/actions/workflows/ci.yml)
 [![Docker Pulls](https://img.shields.io/docker/pulls/shlomi10/bitcoin-tracker?style=for-the-badge)](https://hub.docker.com/r/shlomi10/bitcoin-tracker)
-[![Docker Image Size](https://img.shields.io/docker/image-size/shlomi10/bitcoin-tracker/latest?style=for-the-badge)](https://hub.docker.com/r/shlomi10/bitcoin-tracker)
+[![Docker Image Size](https://img.shields.io/docker/image-size/shlomi10/bitcoin-tracker/001?style=for-the-badge
+)](https://hub.docker.com/r/shlomi10/bitcoin-tracker)
 
 </div>
 
