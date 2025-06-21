@@ -23,6 +23,12 @@ Logs prices every minute, saves them to JSON, generates a graph, and emails the 
 
 ---
 
+## 🧑‍💻 Requirements
+- Python 3.13.5+
+- Docker + Docker Compose
+- Allure CLI (for test reports): https://docs.qameta.io/allure/
+---
+
 ## 📦 Features
 - Fetch Bitcoin price via Coinbase public API
 - Store timestamped prices in JSON
@@ -73,6 +79,24 @@ cp .env.example .env
 # Alternatively, set environment secrets in GitHub Actions for CI
 ```
 
+### Environment Variables 
+
+Create a `.env` (or `.env.local`) file in the project root.  
+For public repos, commit only a `.env.example` file with **placeholders**:
+
+```env
+# Bitcoin price API configuration
+API_URL=https://api.coinbase.com/v2/prices/BTC-USD/spot
+OUTPUT_FILE=data/prices.json
+
+# Email SMTP configuration
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SENDER_EMAIL=your_email@example.com
+SENDER_PASSWORD=your_email_password
+RECIPIENT_EMAIL=recipient@example.com
+```
+
 ### 2. Run Tests with Allure
 ```bash
 pytest tests/ --alluredir=allure-results
@@ -102,12 +126,6 @@ docker pull shlomi10/bitcoin-tracker
 
 ---
 
-## 🧑‍💻 Requirements
-- Python 3.13.5+
-- Docker + Docker Compose
-- Allure CLI (for test reports): https://docs.qameta.io/allure/
----
-
 ## 📂 Project Structure
 ```
 bitcoin-price-tracker/
@@ -130,7 +148,6 @@ bitcoin-price-tracker/
 ├── .env.example
 └── main.py
 ```
-
 ---
 
 ## 📚 Documentation
