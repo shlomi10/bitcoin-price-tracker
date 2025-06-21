@@ -1,5 +1,5 @@
 "Epic","Feature","Story","FAILED","BROKEN","PASSED","SKIPPED","UNKNOWN"
 "","BTCPriceTracker.save_to_file","","0","0","1","0","0"
+"","BTCPriceTracker.fetch_price","","0","0","1","0","0"
 "","generate_graph","","0","0","1","0","0"
 "","EmailSender.send","","0","0","1","0","0"
-"","BTCPriceTracker.fetch_price","","0","0","1","0","0"
