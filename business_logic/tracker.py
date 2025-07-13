@@ -29,3 +29,4 @@ class BTCPriceTracker:
         os.makedirs(os.path.dirname(self.output_file), exist_ok=True)
         with open(self.output_file, 'w') as f:
             json.dump(self.data, f, indent=2)
+        logger.info(f"Saved {len(self.data)} price records to {self.output_file}")
