@@ -1,0 +1,4 @@
+INFO     BTC_Logger:email_sender.py:19 Attaching image from /tmp/pytest-of-root/pytest-0/test_send_email_mocked0/dummy.png
+INFO     BTC_Logger:email_sender.py:24 Connecting to SMTP server smtp.test.com:587
+INFO     BTC_Logger:email_sender.py:27 Logged in as sender@test.com. Sending email to recipient@test.com
+INFO     BTC_Logger:email_sender.py:30 Email sent successfully.

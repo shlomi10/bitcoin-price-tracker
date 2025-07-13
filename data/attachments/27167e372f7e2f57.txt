@@ -1,0 +1,1 @@
+INFO     BTC_Logger:tracker.py:32 Saved 1 price records to /tmp/pytest-of-root/pytest-0/test_save_to_file0/output.json

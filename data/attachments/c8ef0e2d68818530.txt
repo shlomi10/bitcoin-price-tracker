@@ -1,0 +1,2 @@
+INFO     BTC_Logger:graph_generator.py:11 Loading price data from /tmp/pytest-of-root/pytest-0/test_generate_graph0/input.json
+INFO     BTC_Logger:graph_generator.py:25 Saving price graph to /tmp/pytest-of-root/pytest-0/test_generate_graph0/graph.png
